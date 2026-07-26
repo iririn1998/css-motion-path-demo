@@ -17,7 +17,7 @@ npm run dev
 
 # CSS Motion Path とは
 
-**CSS Motion Path** は、要素を「任意の経路（パス）に沿って」移動・回転させるための CSS 仕様です（[CSS Motion Path Module Level 1](https://drafts.fxtf.org/motion-1/)）。
+**CSS Motion Path** は、要素を「任意の経路（パス）に沿って」移動・回転させるための CSS 仕様です（[MDN: CSS モーションパス](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_motion_path)）。
 
 従来、曲線に沿った移動を CSS だけで実現するのは困難で、以下のような手段しかありませんでした。
 
@@ -229,7 +229,8 @@ translate → rotate → scale → offset(パス移動+回転) → transform
 
 - [MDN: CSS Motion Path](https://developer.mozilla.org/ja/docs/Web/CSS/CSS_motion_path)
 - [MDN: offset-path](https://developer.mozilla.org/ja/docs/Web/CSS/offset-path)
-- [CSS Motion Path Module Level 1（仕様）](https://drafts.fxtf.org/motion-1/)
+- [MDN: offset-distance](https://developer.mozilla.org/ja/docs/Web/CSS/offset-distance)
+- [MDN: offset-rotate](https://developer.mozilla.org/ja/docs/Web/CSS/offset-rotate)
 - [MDN: SVG パス（`d` 属性の構文）](https://developer.mozilla.org/ja/docs/Web/SVG/Tutorial/Paths)
 
 ---
