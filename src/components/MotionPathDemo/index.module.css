@@ -2,33 +2,33 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-}
 
-.motion-path-demo > .title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
+  > .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
 
-.motion-path-demo > .canvaswrapper {
-  position: relative;
-  width: 100%;
-}
+  > .canvaswrapper {
+    position: relative;
+    width: 100%;
 
-.motion-path-demo > .canvaswrapper > .path {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+    > .path {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-.motion-path-demo > .canvaswrapper > .car {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60px;
-  height: 26px;
-  offset-rotate: auto;
-  animation: drive 6s linear infinite;
+    > .car {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 26px;
+      offset-rotate: auto;
+      animation: drive 6s linear infinite;
+    }
+  }
 }
 
 @keyframes drive {
