@@ -17,16 +17,11 @@
       width: 100%;
       height: auto;
       display: block;
-    }
 
-    > .car {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 60px;
-      height: 26px;
-      offset-rotate: auto;
-      animation: drive 6s linear infinite;
+      > .car {
+        offset-rotate: auto;
+        animation: drive 6s linear infinite;
+      }
     }
   }
 }
