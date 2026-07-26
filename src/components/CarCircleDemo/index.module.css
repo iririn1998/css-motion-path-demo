@@ -1,0 +1,36 @@
+.car-circle-demo {
+  text-align: center;
+
+  > .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  > .canvas {
+    width: 100%;
+
+    > .stage {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+
+      > .car {
+        offset-rotate: auto;
+        animation: drive 5s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes drive {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
