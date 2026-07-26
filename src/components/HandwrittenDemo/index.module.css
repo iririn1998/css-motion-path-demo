@@ -18,11 +18,23 @@
       border: 1px solid #e2e8f0;
       border-radius: 8px;
 
+      > .ink {
+        stroke-dasharray: 1;
+        stroke-dashoffset: 1;
+        animation: draw 6s linear infinite;
+      }
+
       > .pen {
         offset-rotate: auto;
-        animation: trace 5s linear infinite;
+        animation: trace 6s linear infinite;
       }
     }
+  }
+}
+
+@keyframes draw {
+  100% {
+    stroke-dashoffset: 0;
   }
 }
 
