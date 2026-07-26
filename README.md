@@ -29,14 +29,14 @@ Motion Path を使うと、**SVG のパスデータをそのまま CSS に渡し
 
 ## プロパティ一覧
 
-| プロパティ | 役割 |
-| --- | --- |
-| `offset-path` | 移動する経路そのものを定義する |
+| プロパティ        | 役割                                                 |
+| ----------------- | ---------------------------------------------------- |
+| `offset-path`     | 移動する経路そのものを定義する                       |
 | `offset-distance` | 経路上のどの位置にいるか（始点からの距離）を指定する |
-| `offset-rotate` | 経路上での要素の向き（回転）を制御する |
-| `offset-anchor` | 要素のどの点をパス上に乗せるかを指定する |
-| `offset-position` | パスの開始位置（`ray()` などで使用）を指定する |
-| `offset` | 上記をまとめて指定するショートハンド |
+| `offset-rotate`   | 経路上での要素の向き（回転）を制御する               |
+| `offset-anchor`   | 要素のどの点をパス上に乗せるかを指定する             |
+| `offset-position` | パスの開始位置（`ray()` などで使用）を指定する       |
+| `offset`          | 上記をまとめて指定するショートハンド                 |
 
 ### 1. `offset-path` — 経路の定義
 
@@ -68,9 +68,9 @@ offset-path: border-box;
 パスの始点からどれだけ進んだかを指定します。**アニメーションさせるのは通常このプロパティ**です。
 
 ```css
-offset-distance: 0%;    /* パスの始点 */
-offset-distance: 50%;   /* パスの中間地点 */
-offset-distance: 100%;  /* パスの終点 */
+offset-distance: 0%; /* パスの始点 */
+offset-distance: 50%; /* パスの中間地点 */
+offset-distance: 100%; /* パスの終点 */
 offset-distance: 120px; /* 長さでの指定も可能 */
 ```
 
@@ -78,8 +78,12 @@ offset-distance: 120px; /* 長さでの指定も可能 */
 
 ```css
 @keyframes drive {
-  0%   { offset-distance: 0%; }
-  100% { offset-distance: 100%; }
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
 }
 ```
 
@@ -88,10 +92,10 @@ offset-distance: 120px; /* 長さでの指定も可能 */
 経路上での要素の向きを制御します。
 
 ```css
-offset-rotate: auto;         /* 進行方向を向く（デフォルト）。車や飛行機に最適 */
-offset-rotate: reverse;      /* 進行方向の逆を向く（auto 180deg と同じ） */
-offset-rotate: 0deg;         /* 回転しない（常に同じ向き）。人のアイコンなどに */
-offset-rotate: auto 90deg;   /* 進行方向 + 90度のオフセット */
+offset-rotate: auto; /* 進行方向を向く（デフォルト）。車や飛行機に最適 */
+offset-rotate: reverse; /* 進行方向の逆を向く（auto 180deg と同じ） */
+offset-rotate: 0deg; /* 回転しない（常に同じ向き）。人のアイコンなどに */
+offset-rotate: auto 90deg; /* 進行方向 + 90度のオフセット */
 ```
 
 このデモの車は `offset-rotate: auto` により、円周のカーブに合わせて常に進行方向を向きます。
@@ -101,9 +105,9 @@ offset-rotate: auto 90deg;   /* 進行方向 + 90度のオフセット */
 デフォルトでは要素の中心（`transform-origin` 相当、通常 `50% 50%`）がパス上に乗ります。別の点を乗せたい場合に使います。
 
 ```css
-offset-anchor: center;      /* デフォルト相当 */
+offset-anchor: center; /* デフォルト相当 */
 offset-anchor: bottom left; /* 左下の角がパス上をなぞる */
-offset-anchor: 50% 100%;    /* 下辺の中央 */
+offset-anchor: 50% 100%; /* 下辺の中央 */
 ```
 
 > **ブラウザ対応の注意:** `offset-anchor` は Safari で長らく未対応でした。このデモでは互換性のため `offset-anchor` を使わず、SVG の `<g transform="translate(-30, -13)">` で車のサイズ（60×26）の半分だけずらして中心をアンカー点に合わせています。
@@ -113,8 +117,8 @@ offset-anchor: 50% 100%;    /* 下辺の中央 */
 `ray()` のようにパス自体が位置を持たない場合の始点や、`url()` 参照時の初期位置を指定します。
 
 ```css
-offset-position: auto;      /* 要素本来の位置から開始 */
-offset-position: 50% 50%;   /* 包含ブロックの中央から開始 */
+offset-position: auto; /* 要素本来の位置から開始 */
+offset-position: 50% 50%; /* 包含ブロックの中央から開始 */
 ```
 
 ### 6. `offset` — ショートハンド
@@ -149,12 +153,12 @@ const PATH_DATA = "M 400,75 A 150,150 0 1,1 400,375 A 150,150 0 1,1 400,75 Z";
 
 `M 400,75 A 150,150 0 1,1 400,375 A 150,150 0 1,1 400,75 Z`
 
-| コマンド | 意味 |
-| --- | --- |
-| `M 400,75` | (400, 75) へペンを移動（Move to）。ここがパスの始点 = `offset-distance: 0%` の位置 |
+| コマンド                  | 意味                                                                                   |
+| ------------------------- | -------------------------------------------------------------------------------------- |
+| `M 400,75`                | (400, 75) へペンを移動（Move to）。ここがパスの始点 = `offset-distance: 0%` の位置     |
 | `A 150,150 0 1,1 400,375` | 半径 150 の円弧（Arc）で (400, 375) まで描く。`1,1` は「大きい方の弧・時計回り」フラグ |
-| `A 150,150 0 1,1 400,75` | 同じく円弧で始点 (400, 75) に戻る |
-| `Z` | パスを閉じる（Close path） |
+| `A 150,150 0 1,1 400,75`  | 同じく円弧で始点 (400, 75) に戻る                                                      |
+| `Z`                       | パスを閉じる（Close path）                                                             |
 
 SVG の `A`（円弧）コマンド 1 つでは半円までしか表現できないため、**半円 2 つをつないで完全な円**を作っています。中心 (400, 225)・半径 150 の円になります。
 
@@ -162,13 +166,17 @@ SVG の `A`（円弧）コマンド 1 つでは半円までしか表現できな
 
 ```css
 .car {
-  offset-rotate: auto;                 /* カーブに合わせて車の向きを変える */
+  offset-rotate: auto; /* カーブに合わせて車の向きを変える */
   animation: drive 6s linear infinite; /* 6秒で一周、等速、無限ループ */
 }
 
 @keyframes drive {
-  0%   { offset-distance: 0%; }
-  100% { offset-distance: 100%; }
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
 }
 ```
 
