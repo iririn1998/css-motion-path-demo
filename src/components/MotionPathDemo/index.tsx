@@ -6,14 +6,14 @@ const PATH_DATA = "M 400,75 A 150,150 0 1,1 400,375 A 150,150 0 1,1 400,75 Z";
 
 export const MotionPathDemo: FC = () => {
   return (
-    <div className={styles.container}>
-      <h1>CSS Motion Path Demo</h1>
+    <div className={styles["motion-path-demo"]}>
+      <h1 className={styles["title"]}>CSS Motion Path Demo</h1>
 
-      <div className={styles.canvasWrapper}>
-        <svg className={styles.path} viewBox="0 0 800 450">
+      <div className={styles["canvaswrapper"]}>
+        <svg className={styles["path"]} viewBox="0 0 800 450">
           <path d={PATH_DATA} fill="none" stroke="#999" strokeWidth="2" strokeDasharray="6 6" />
           <g
-            className={styles.car}
+            className={styles["car"]}
             style={
               {
                 offsetPath: `path('${PATH_DATA}')`,

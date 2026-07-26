@@ -1,21 +1,27 @@
-.container {
+.motion-path-demo {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
 
-.canvasWrapper {
+.motion-path-demo > .title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.motion-path-demo > .canvaswrapper {
   position: relative;
   width: 100%;
 }
 
-.path {
+.motion-path-demo > .canvaswrapper > .path {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.car {
+.motion-path-demo > .canvaswrapper > .car {
   position: absolute;
   top: 0;
   left: 0;
@@ -32,12 +38,4 @@
   100% {
     offset-distance: 100%;
   }
-}
-
-.codeBlock {
-  margin-top: 20px;
-  padding: 15px;
-  background: #f4f4f4;
-  font-family: monospace;
-  white-space: pre-wrap;
 }
