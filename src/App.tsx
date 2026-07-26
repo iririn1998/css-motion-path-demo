@@ -1,9 +1,8 @@
 import type { FC } from "react";
+import MotionPathDemo from "./components/MotionPathDemo";
 
 const App: FC = () => {
-  return (
-    <div><h1>CSS MOTION PATH DEMO</h1></div>
-  );
+  return <MotionPathDemo />;
 };
 
 export default App;

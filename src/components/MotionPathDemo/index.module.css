@@ -1,0 +1,43 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.canvasWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.path {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.car {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 26px;
+  offset-rotate: auto;
+  animation: drive 6s linear infinite;
+}
+
+@keyframes drive {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.codeBlock {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f4f4f4;
+  font-family: monospace;
+  white-space: pre-wrap;
+}
