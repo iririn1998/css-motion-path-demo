@@ -13,5 +13,6 @@ export default defineConfig({
         unnamedComponents: "arrow-function",
       },
     ],
+    "typescript/consistent-type-definitions": ["error", "type"],
   },
 });
