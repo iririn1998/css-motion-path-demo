@@ -1,5 +1,5 @@
 import type { CSSProperties, FC } from "react";
-import { Car } from "../Car";
+import { Car } from "./Car";
 import styles from "./index.module.css";
 
 const PATH_DATA = "M 400,75 A 150,150 0 1,1 400,375 A 150,150 0 1,1 400,75 Z";
